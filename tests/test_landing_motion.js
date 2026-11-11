@@ -1,0 +1,44 @@
+// Deterministic playback lifecycle coverage; visual geometry requires a browser.
+const {JSDOM}=require('jsdom');
+const fs=require('fs'),path=require('path'),assert=require('node:assert/strict');
+const read=file=>fs.readFileSync(path.join(__dirname,'..',file),'utf8');
+(async()=>{
+ const dom=new JSDOM(read('static/landing.html'),{url:'http://localhost/',runScripts:'outside-only',pretendToBeVisual:true});
+ const w=dom.window,d=w.document;
+ let reduced=false,preferenceChange,clock=0,nextId=0,calls=0;
+ const pending=new Map();
+ w.setTimeout=(fn,delay)=>{const id=++nextId;pending.set(id,{fn,at:clock+delay,delay});return id;};
+ w.clearTimeout=id=>pending.delete(id);
+ const advance=ms=>{clock+=ms;for(const [id,timer] of [...pending])if(timer.at<=clock){pending.delete(id);timer.fn();}};
+ w.matchMedia=query=>({get matches(){return query.includes('reduced-motion')&&reduced;},addEventListener:(event,fn)=>{if(query.includes('reduced-motion'))preferenceChange=fn;}});
+ w.fetch=async()=>{calls++;return {ok:true,json:async()=>({cases:[]})};};
+ w.AbortController=AbortController;
+ w.eval(read('static/landing.js'));
+ await new Promise(resolve=>setImmediate(resolve));
+ const demo=d.querySelector('#hero-demo'),button=d.querySelector('#play-explanation'),status=d.querySelector('#motion-status');
+ const values=()=>[d.querySelector('.dossier-result').textContent,d.querySelector('.calculation').textContent,d.querySelector('.measure-line').outerHTML];
+ const original=values();
+ assert.equal(demo.dataset.motion,'idle');assert.equal(pending.size,0,'no autoplay timer');
+ assert.equal(button.getAttribute('aria-pressed'),'false');
+ button.click();assert.equal(demo.dataset.motion,'playing');assert.equal(button.getAttribute('aria-pressed'),'true');
+ assert.deepEqual([...pending.values()].map(timer=>timer.delay),[3000,6000,9000]);
+ assert.equal(demo.dataset.step,'sources');assert(d.querySelector('.demo-header-actions>span').textContent.includes('01 / 03'));
+ advance(2999);assert.equal(demo.dataset.step,'sources');advance(1);assert.equal(demo.dataset.step,'comparison');assert(status.textContent.includes('11.87%'));
+ advance(3000);assert.equal(demo.dataset.step,'handoff');assert(status.textContent.includes('고객 보유량'));assert(d.querySelector('.demo-header-actions>span').textContent.includes('03 / 03'));
+ advance(3000);assert.equal(demo.dataset.motion,'idle');assert(status.textContent.includes('사람'));assert.equal(pending.size,0);assert.equal(demo.dataset.step,undefined);assert.equal(d.querySelector('.demo-header-actions>span').textContent,'원본 기준 설명용 예시');
+ button.click();advance(500);button.click();assert.equal(pending.size,0,'manual stop cancels completion');assert.equal(demo.dataset.motion,'idle');
+ button.click();advance(8500);assert.equal(demo.dataset.motion,'playing','old timer cannot interrupt replay');advance(500);assert.equal(demo.dataset.motion,'idle');
+ button.click();button.dispatchEvent(new w.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));assert.equal(demo.dataset.motion,'idle');assert.equal(pending.size,0);
+ button.click();Object.defineProperty(d,'hidden',{configurable:true,value:true});d.dispatchEvent(new w.Event('visibilitychange'));assert.equal(demo.dataset.motion,'idle');assert.equal(pending.size,0);
+ Object.defineProperty(d,'hidden',{configurable:true,value:false});d.dispatchEvent(new w.Event('visibilitychange'));assert.equal(demo.dataset.motion,'idle','returning tab never restarts');
+ button.click();reduced=true;preferenceChange({matches:true});assert.equal(demo.dataset.motion,'idle');assert.equal(pending.size,0,'live preference change stops playback');
+ button.click();assert.equal(demo.dataset.motion,'idle');assert.equal(pending.size,0,'reduced motion gives immediate static explanation');assert(status.textContent.includes('사람'));
+ reduced=false;preferenceChange({matches:false});assert.equal(demo.dataset.motion,'idle');button.click();w.dispatchEvent(new w.Event('pagehide'));assert.equal(demo.dataset.motion,'idle');assert.equal(pending.size,0);
+ assert.deepEqual(values(),original,'source values and meter unchanged');assert.equal(calls,1,'only initial read-only state request');
+ const connectors=[...d.querySelectorAll('.signal-connector')];assert.equal(connectors.length,2);
+ connectors.forEach(el=>{assert.equal(el.getAttribute('aria-hidden'),'true');assert(el.querySelector('svg path'));assert(!el.querySelector('b,span'),'no font arrow or travelling particle');});
+ const css=read('static/landing.css');assert(!css.includes('signalTravel'));assert(!css.includes('translateX(3px)'));assert(css.includes('animation:none!important'));assert(!css.includes('infinite'));assert(css.includes('transform:rotate(90deg)'));assert(css.includes('box-shadow:inset 3px 0 var(--accent)'));assert(css.includes('outline:2px solid transparent'));assert(css.includes('animation-delay:6.8s'));// Colors remain the established warm palette.
+ assert(css.includes('--accent:#8b3f50'));assert(css.includes('background:#e9ddd4')); 
+ for(const name of ['sourceSignal','connectorSignal','metricSignal','taskSignal'])assert.equal((css.match(new RegExp('@keyframes '+name,'g'))||[]).length,1,'single motion definition');
+ dom.window.close();console.log('Landing motion PASS: no autoplay, three explicit 3s stages, 9s single pass, stop/replay/Escape, tab/page exit, live reduced-motion, fixed source values, no mutation calls, stationary SVG connectors.');
+})().catch(error=>{console.error(error);process.exitCode=1;});

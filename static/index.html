@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f1ea">
+  <title>Aurora Quality Bridge · 품질 운영 워크스페이스</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/workspace.css">
+  <link rel="stylesheet" href="/static/common-nav.css">
+  <script src="/static/common-nav.js" defer></script>
+  <link rel="stylesheet" href="/static/supply-alternatives.css">
+  <script src="/static/supply-alternatives.js" defer></script>
+  <script src="/static/app.js" defer></script>
+</head>
+<body class="has-global-nav workspace-page">
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+  <header class="global-header" data-site-header>
+    <div class="global-header-inner">
+      <a class="wordmark" href="/" aria-label="Aurora Quality Bridge 홈">aurora<span class="mark-dot">.</span><span class="brand-divider"></span><span class="brand-name">QUALITY<br>BRIDGE</span></a>
+      <nav class="primary-nav" aria-label="주요 화면"><a href="/" data-destination="intro" >소개</a><a href="/workspace" data-destination="workspace" data-view="workspace" aria-current="page">품질 검토</a><a href="/workspace#tasks" data-destination="tasks" data-view="tasks">공급 복구</a><a href="/workspace#sources" data-destination="sources" data-view="sources">근거 자료</a><a href="/workspace#audit" data-destination="audit" data-view="audit">감사 이력</a></nav>
+      <span class="global-context">W03 · 모의 업무</span>
+    </div>
+  </header>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="주 메뉴">
+      <a class="brand" href="/" aria-label="Aurora 소개로 돌아가기"><span>aurora<span class="brand-dot">.</span></span></a>
+      <div class="brand-subtitle">QUALITY BRIDGE</div>
+      <div class="workspace-switch"><span class="workspace-avatar">C</span><div><strong>Corevia</strong><span>품질 · 공급 운영</span></div><span class="workspace-arrow">W03</span></div>
+      <div class="nav-label">OPERATIONS</div>
+      <nav id="main-nav">
+        <button class="nav-item active" data-view="workspace"><span data-icon="layers"></span>품질 검토<span class="nav-count" id="nav-case-count">–</span></button>
+        <button class="nav-item" data-view="tasks"><span data-icon="board"></span>공급 복구 보드<span class="nav-notice"></span></button>
+        <button class="nav-item" data-view="sources"><span data-icon="folder"></span>데이터와 근거</button>
+        <button class="nav-item" data-view="audit"><span data-icon="clock"></span>감사 이력</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="ai-status"><span class="status-dot neutral"></span><span>AI 연결 미설정</span><button aria-label="AI 연결 상태 설명" data-action="ai-info">?</button></div>
+        <div class="sandbox-card"><span data-icon="shield"></span><strong>로컬 시뮬레이션</strong><p>원본은 보존됩니다.<br>실제 회수·발송은 실행하지 않습니다.<br>역할 선택은 실제 인증이 아닙니다.</p><a class="sandbox-tag" href="/">서비스 소개로 ↗</a></div>
+        <div class="sidebar-footer">AURORA GROUP<span>W03 / DEMO</span></div>
+      </div>
+    </aside>
+    <div class="main-shell">
+      <header class="topbar"><div class="breadcrumbs"><a href="/" aria-label="Aurora 소개">Aurora</a><span>/</span><strong id="breadcrumb-current">품질 검토</strong></div><div class="topbar-actions"><span class="reference-date"><span data-icon="calendar"></span>기준일 2026.07.01</span><div class="role-picker"><span class="role-avatar" id="role-avatar">품</span><div><label for="role-select">데모 역할 · 실제 인증 아님</label><select id="role-select" aria-label="데모 역할 선택"><option value="quality">품질팀</option><option value="committee">품질위원회</option><option value="sales">영업팀</option><option value="production">생산팀</option></select></div><span data-icon="chevron"></span></div></div></header>
+      <main id="main" tabindex="-1">
+        <section class="page-header"><div><div class="eyebrow"><span class="tiny-line"></span>QUALITY & SUPPLY RECOVERY</div><h1 id="page-title">품질 이슈와 공급 복구</h1><p id="page-description">검토할 배치를 선택해 근거와 다음 할 일을 확인하세요.</p></div><div class="page-actions"><button class="button secondary" data-action="guide"><span data-icon="book"></span>운영 원칙</button><button class="button primary" data-action="new-case"><span data-icon="plus"></span>새 사건 등록</button></div></section>
+        <div id="creation-role-note" class="creation-role-note" hidden></div>
+        <div class="notice-strip"><span data-icon="shield"></span><p><strong>배치별로 판정하고, 위원회가 의결합니다.</strong> 규격이탈 확정 불량률 10% 이상을 회수 대상으로 분류합니다.</p><button data-action="policy">정책 근거 <span>↗</span></button></div>
+        <div id="summary-cards" class="summary-grid" aria-label="운영 요약"><div class="summary-card skeleton"></div><div class="summary-card skeleton"></div><div class="summary-card skeleton"></div><div class="summary-card skeleton"></div></div>
+        <section id="view-container" aria-live="polite"><div class="initial-loading"><span class="spinner"></span><strong>배치와 근거를 불러오는 중</strong><p>원본 품질 기록을 불러오고 있습니다.</p></div></section>
+        <footer class="main-footer"><span><i class="live-dot"></i>원본 근거 확인 · 로컬 서버에 이력 저장</span><span>W03 · 기준일과 실제 작업 시각을 구분합니다</span></footer>
+      </main>
+    </div>
+  </div>
+  <div id="toast-region" aria-live="polite" aria-atomic="true"></div>
+  <div id="modal-root"></div>
+  <div id="drawer-root"></div>
+</body>
+</html>

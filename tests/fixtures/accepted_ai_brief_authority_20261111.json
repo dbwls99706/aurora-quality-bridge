@@ -1,0 +1,159 @@
+{
+  "approval_effect": "none",
+  "canonical_facts_validated": true,
+  "content": "{\"alternatives\":[\"기존 라인 순차 재공급: 영업팀 수량 확인 → 생산 일정 확인 → 품질 확인 → 고객별 공급일 합의 (conditional)\",\"부분 공급·희망일 재협의: 생산 지연 시 영업팀이 고객 우선순위·분할 수량 협의, 실제 출하는 미진행\",\"F2 전환 별도 투자 검토: 원본 OPT-02(12억 원·7주·연 600,000 EA) 원료 재계약·처방 재검증 필요, 본 검토에서 자동 실행 제외\"],\"evidence_ids\":[\"B-02-2602-01\",\"QC-00001\",\"QC-00002\",\"QC-00003\",\"QC-00004\",\"QC-00005\",\"QC-00006\",\"QC-00007\",\"QC-00008\",\"QC-00009\",\"QC-00010\",\"QC-00011\",\"QC-00012\",\"QC-00013\",\"QC-00014\",\"QC-00015\",\"QC-00016\",\"QC-00017\",\"QC-00018\",\"QC-00019\",\"QC-00020\",\"QC-00021\",\"QC-00022\"],\"facts\":{\"confirmed_qty\":17900,\"defect_rate_pct\":11.874357,\"produced_qty\":150745,\"recall_eligible\":true,\"recall_threshold_pct\":10},\"risks\":[\"실제 고객 보유량·필요 재공급 수량 미확인으로 공급 범위·기한 산정 불가\",\"배치 회수 범위와 클레임 고객 범위 불일치(C-105 포함) · 출하 이력과 현재 보유량 확인 필요\",\"F1 공장 생산라인 L-02 가동률 97% · 원본 연간 생산능력 미명시로 잔여능력(일 224 EA 상한·261영업일 기준) 확정 불가 · 원료 독점계약(V-205·2년 장기·MOQ·자동갱신·위약) 재공급 승인 필요\"],\"summary\":\"배치 B-02-2602-01 불량률 11.87%(확정 17,900 EA ÷ 생산 150,745 EA) 회수 기준 충족(10% 이상). 이미 품질위원회 승인(2026-11-10) 되었으며 근본원인 조사는 진행 중(open). 재공급 실행 전 ①고객 보유량·재공급 수량 영업팀 확인 ②생산팀 일정·원료·수량 확인 ③품질팀 재공급품 확인 ④출하·회수 범위 확정 필요\"}",
+  "evidence_ids_validated": true,
+  "generated_at": "2026-11-11T02:45:15.504674Z",
+  "human_review_required": true,
+  "id": "AI-aa6d098fb58ea2bf",
+  "input_contract_version": 4,
+  "input_fingerprint": "61cc76a1e347ba218e8c85eb830af3aa36fde1ecd3dbab2a7c97687b39d35ad7",
+  "kind": "model_generated_advice",
+  "model": "claude-haiku-4-5-20251001",
+  "narrative_screening": {
+    "human_source_comparison_required": true,
+    "scope": "자유서술의 수치·식별자·정책·실행 주장은 자동 사실검증하지 않음.",
+    "semantic_verified": false,
+    "status": "not_semantically_verified",
+    "version": 2,
+    "workflow_authority": "none"
+  },
+  "prompt_hash": "a027b60eb25598e49e9e2352670809599fbd5700ae49fa2c8c44c40dd69a8d47",
+  "provider": "Anthropic",
+  "reference_context": {
+    "capacity": {
+      "capacity_period_assumption": "annual_not_specified_in_original",
+      "capacity_qty": 1949480,
+      "daily_capacity_limit": 224,
+      "daily_formula": "floor(residual_capacity_qty / working_days_assumption)",
+      "factory_utilization_pct": null,
+      "kind": "simulation_assumption_not_confirmed_availability",
+      "line_id": "L-02",
+      "plant_id": "F1",
+      "product_id": "PL-02",
+      "residual_capacity_qty": 58484,
+      "residual_formula": "floor(capacity_qty * (100 - utilization_pct) / 100)",
+      "snapshot_date": "2026-06-30",
+      "source": {
+        "kind": "original",
+        "path": "01_corevia/production/strat_capacity_cv.csv",
+        "record_id": "F1",
+        "row_hash": "58e9fd36d104742e254b7bc588d362005535987a8ac41630005645c6dc2e4087",
+        "row_number": 3,
+        "sha256": "d8bff0e267868a1d736dfd309dc67ae5c9a46c73d98136c406f7f9df73b99636",
+        "source_id": "capacity"
+      },
+      "utilization_pct": 97.0,
+      "utilization_scope": "line_not_factory",
+      "working_days_assumption": 261
+    },
+    "customer_scope": {
+      "batch_shipment_customers": [
+        "C-101",
+        "C-102",
+        "C-103",
+        "C-104"
+      ],
+      "claim_without_batch_shipment": [
+        "C-105"
+      ],
+      "shipment_is_current_inventory": false
+    },
+    "kind": "application_reference_not_model_output",
+    "planning": {
+      "assumed_daily_ceiling": 224,
+      "calendar_basis": "weekdays_only_excludes_start_day_no_holidays",
+      "ceiling_must_not_override_selected_rate": true,
+      "confirmed_defect_qty": 17900,
+      "confirmed_qty_role": "defect_count_not_replacement_quantity",
+      "customer_agreement": "pending",
+      "earliest_ship_date": null,
+      "inventory_verified": false,
+      "kind": "participant_simulation_not_supply_commitment",
+      "production_confirmed": false,
+      "production_days": null,
+      "production_delay_days": 0,
+      "production_lead_days": 3,
+      "qa_days": 2,
+      "qa_release": false,
+      "quantity_status": "not_entered",
+      "replacement_qty": null,
+      "selected_daily_capacity": 200,
+      "total_business_days": null
+    },
+    "workflow": {
+      "correction_review_required": false,
+      "external_execution": false,
+      "latest_decision": {
+        "created_at": "2026-11-10T11:09:14.218878Z",
+        "decision": "approve",
+        "id": 1,
+        "quality_revision": 1,
+        "revision": 1,
+        "scope": "recall"
+      },
+      "recall_authorized": true,
+      "review_scope": "supply",
+      "root_cause": {
+        "department": "quality",
+        "id": "TASK-739E6AF7C0",
+        "revision": 1,
+        "status": "open"
+      },
+      "simulated_decision": true,
+      "status": "approved"
+    }
+  },
+  "reserved_cost_usd": 0.21024,
+  "review_revision": 1,
+  "structured": {
+    "alternatives": [
+      "기존 라인 순차 재공급: 영업팀 수량 확인 → 생산 일정 확인 → 품질 확인 → 고객별 공급일 합의 (conditional)",
+      "부분 공급·희망일 재협의: 생산 지연 시 영업팀이 고객 우선순위·분할 수량 협의, 실제 출하는 미진행",
+      "F2 전환 별도 투자 검토: 원본 OPT-02(12억 원·7주·연 600,000 EA) 원료 재계약·처방 재검증 필요, 본 검토에서 자동 실행 제외"
+    ],
+    "evidence_ids": [
+      "B-02-2602-01",
+      "QC-00001",
+      "QC-00002",
+      "QC-00003",
+      "QC-00004",
+      "QC-00005",
+      "QC-00006",
+      "QC-00007",
+      "QC-00008",
+      "QC-00009",
+      "QC-00010",
+      "QC-00011",
+      "QC-00012",
+      "QC-00013",
+      "QC-00014",
+      "QC-00015",
+      "QC-00016",
+      "QC-00017",
+      "QC-00018",
+      "QC-00019",
+      "QC-00020",
+      "QC-00021",
+      "QC-00022"
+    ],
+    "facts": {
+      "confirmed_qty": 17900,
+      "defect_rate_pct": 11.874357,
+      "produced_qty": 150745,
+      "recall_eligible": true,
+      "recall_threshold_pct": 10
+    },
+    "risks": [
+      "실제 고객 보유량·필요 재공급 수량 미확인으로 공급 범위·기한 산정 불가",
+      "배치 회수 범위와 클레임 고객 범위 불일치(C-105 포함) · 출하 이력과 현재 보유량 확인 필요",
+      "F1 공장 생산라인 L-02 가동률 97% · 원본 연간 생산능력 미명시로 잔여능력(일 224 EA 상한·261영업일 기준) 확정 불가 · 원료 독점계약(V-205·2년 장기·MOQ·자동갱신·위약) 재공급 승인 필요"
+    ],
+    "summary": "배치 B-02-2602-01 불량률 11.87%(확정 17,900 EA ÷ 생산 150,745 EA) 회수 기준 충족(10% 이상). 이미 품질위원회 승인(2026-11-10) 되었으며 근본원인 조사는 진행 중(open). 재공급 실행 전 ①고객 보유량·재공급 수량 영업팀 확인 ②생산팀 일정·원료·수량 확인 ③품질팀 재공급품 확인 ④출하·회수 범위 확정 필요"
+  },
+  "usage": {
+    "input_tokens": 6067,
+    "output_tokens": 897
+  },
+  "verification_warning": "응답 형식, facts 수치, evidence_ids의 존재만 검사했습니다. AI가 작성한 설명과 정책 해석은 아직 검증되지 않았습니다. 본문의 숫자·근거 인용·권고·실행 주장은 거짓일 수 있습니다. 원본에 근거한 자신의 판단을 별도로 기록하세요."
+}

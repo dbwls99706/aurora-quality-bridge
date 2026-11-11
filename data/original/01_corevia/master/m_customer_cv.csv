@@ -1,0 +1,13 @@
+customer_id|customer_name|channel_type|cost_linked_clause|payment_terms_days|revenue_share_pct|effective_date
+C-101|뷰티메가리테일|B2B|False|60|30.0|2024-01-01
+C-102|홈앤쇼핑네트워크|홈쇼핑|True|45|25.0|2024-01-01
+C-103|라라드럭스토어|B2B|True|50|8.0|2024-01-01
+C-104|그린마트체인|B2B|False|55|6.0|2024-01-01
+C-105|더뷰티클럽|B2B|True|45|5.0|2024-01-01
+C-106|코스메랩OEM|OEM|False|60|5.0|2024-01-01
+C-107|뷰티팜OEM|OEM|False|60|4.0|2024-01-01
+C-108|한결생활건강|B2B|True|50|4.0|2024-01-01
+C-109|올디스뷰티|B2B|False|45|3.5|2024-01-01
+C-110|미소마켓|B2B|True|40|2.5|2024-01-01
+C-111|뷰티인사이드|B2B|False|45|1.5|2024-01-01
+C-112|코스모라인OEM|OEM|False|60|1.0|2024-01-01

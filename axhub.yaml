@@ -1,0 +1,14 @@
+version: axhub/v1
+name: Aurora Quality Bridge
+build:
+  deploy_method: docker
+  dockerfile: Dockerfile
+runtime:
+  port: 8000
+  health_path: /healthz
+database:
+  engine: postgres
+network:
+  egress:
+    - host: api.anthropic.com
+      port: 443

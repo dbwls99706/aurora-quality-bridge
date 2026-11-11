@@ -1,0 +1,33 @@
+{
+  "name": "aurora-quality-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local Aurora W03 simulation and regression tests",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "test": "node tests/test_frontend_render.js && node tests/test_dom_flow.js && node tests/test_accessibility.js && node tests/test_redesign.js && node tests/test_review_polish.js && node tests/test_navigation_flow.js && node tests/test_supply_comparison.js && node tests/test_design_findings.js && node tests/test_korean_copy.js && node tests/test_ai_review_ui.js && node tests/test_landing_concept.js && node tests/test_landing_motion.js && node tests/test_common_navigation.js && node tests/test_supplemental_ai_ui.js && node tests/test_board_reliability.js && node tests/test_ai_reference_context_ui.js && node tests/test_ai_planning_context_ui.js && node tests/test_ai_authority_context_ui.js && node tests/test_supply_alternatives.js && node tests/test_reply_proposal.js",
+    "test:render": "node tests/test_frontend_render.js",
+    "test:dom": "node tests/test_dom_flow.js",
+    "test:a11y": "node tests/test_accessibility.js",
+    "test:redesign": "node tests/test_redesign.js",
+    "test:polish": "node tests/test_review_polish.js",
+    "test:navigation": "node tests/test_navigation_flow.js",
+    "test:supply": "node tests/test_supply_comparison.js",
+    "test:design": "node tests/test_design_findings.js",
+    "test:copy": "node tests/test_korean_copy.js",
+    "test:ai-review": "node tests/test_ai_review_ui.js",
+    "test:landing": "node tests/test_landing_concept.js",
+    "test:common-navigation": "node tests/test_common_navigation.js",
+    "test:motion": "node tests/test_landing_motion.js",
+    "test:board-reliability": "node tests/test_board_reliability.js",
+    "test:ai-context": "node tests/test_ai_reference_context_ui.js",
+    "test:ai-planning": "node tests/test_ai_planning_context_ui.js",
+    "test:ai-authority": "node tests/test_ai_authority_context_ui.js",
+    "test:reply-proposal": "node tests/test_reply_proposal.js"
+  },
+  "devDependencies": {
+    "jsdom": "31.0.0"
+  }
+}

@@ -1,0 +1,1185 @@
+{
+  "id": "CASE-001",
+  "batch_id": "B-02-2602-01",
+  "title": "더마 2월 배치 · 회수 검토",
+  "status": "draft",
+  "version": 1,
+  "review_revision": 1,
+  "conditions": {
+    "confirmed_qty_override": null,
+    "customer_due_date": "2026-07-20",
+    "effective_date": "2026-07-01",
+    "inventory_verified": false,
+    "production_confirmed": false,
+    "production_daily_capacity": 200,
+    "production_delay_days": 0,
+    "production_lead_days": 3,
+    "qa_days": 2,
+    "qa_release": false,
+    "replacement_qty": null
+  },
+  "recall_authorized": false,
+  "created_at": "2026-11-09T03:38:22.120488Z",
+  "updated_at": "2026-11-09T03:38:22.120488Z",
+  "ai_brief": null,
+  "quality_revision": 1,
+  "supply_revision": 1,
+  "batch": {
+    "batch_id": "B-02-2602-01",
+    "product_id": "PL-02",
+    "production_line": "F1",
+    "production_date": "2026-02-05",
+    "produced_qty": 150745,
+    "input_lot_ids": "LOT-B-2602-P",
+    "qc_result": "보류",
+    "source": {
+      "source_id": "batches",
+      "path": "01_corevia/production/prod_batch_log_cv.csv",
+      "row_number": 227,
+      "record_id": "B-02-2602-01",
+      "sha256": "6c49f0268bd75c21dee53bb8e7c6cedffcf825b836f1d42c822671fb1ebab408",
+      "row_hash": "a09f242e0576f22b54724b98977a2a108920e3ba622364de838f58dc645db0bf",
+      "kind": "original"
+    },
+    "product_name": "더마"
+  },
+  "claims": [
+    {
+      "claim_id": "QC-00001",
+      "claim_date": "2026-03-23",
+      "customer_id": "C-101",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 569,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 2,
+        "record_id": "QC-00001",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "70ae2199d6a64bf05a4a547fcbedc07ecc21c843367f00413767910699f40586",
+        "kind": "original"
+      }
+    },
+    {
+      "claim_id": "QC-00002",
+      "claim_date": "2026-03-10",
+      "customer_id": "C-105",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 681,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 3,
+        "record_id": "QC-00002",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "ebeab46924181090fe0ce3f590b8c2f17333484f11ac11a7e97f737a39dc3545",
+        "kind": "original"
+      }
+    },
+    {
+      "claim_id": "QC-00003",
+      "claim_date": "2026-04-06",
+      "customer_id": "C-104",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 1006,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 4,
+        "record_id": "QC-00003",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "2452d3e903a921c8c6a5ec1e867e08f9a0acca75b54c0e96259bf0b767845909",
+        "kind": "original"
+      }
+    },
+    {
+      "claim_id": "QC-00004",
+      "claim_date": "2026-03-11",
+      "customer_id": "C-101",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 1059,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 5,
+        "record_id": "QC-00004",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "253086341d6eac0124ca39bf2bc414bd43badf63e990679807cdc7d4fd58004d",
+        "kind": "original"
+      }
+    },
+    {
+      "claim_id": "QC-00005",
+      "claim_date": "2026-03-17",
+      "customer_id": "C-105",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 544,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 6,
+        "record_id": "QC-00005",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "1b063e6e4d73479951dd74bb50f2cc513b7418c00712e8472378ad9d75f357f9",
+        "kind": "original"
+      }
+    },
+    {
+      "claim_id": "QC-00006",
+      "claim_date": "2026-03-30",
+      "customer_id": "C-104",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 1100,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 7,
+        "record_id": "QC-00006",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "7a27a2fab8c406d43ddc1b889a0a1610847501952f75158030c7a48dcd2eaeef",
+        "kind": "original"
+      }
+    },
+    {
+      "claim_id": "QC-00007",
+      "claim_date": "2026-03-12",
+      "customer_id": "C-101",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 504,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 8,
+        "record_id": "QC-00007",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "51394302a39abae0b70c45b4b45cfed486fc4212b8b3619457b4580d2d60ea3d",
+        "kind": "original"
+      }
+    },
+    {
+      "claim_id": "QC-00008",
+      "claim_date": "2026-03-10",
+      "customer_id": "C-105",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 949,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 9,
+        "record_id": "QC-00008",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "0f3bb7367f8cc7131515d3e1284bf77e4a5b40a4e911cf50a3c1e561ad6905f1",
+        "kind": "original"
+      }
+    },
+    {
+      "claim_id": "QC-00009",
+      "claim_date": "2026-03-25",
+      "customer_id": "C-102",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 972,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 10,
+        "record_id": "QC-00009",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "32bc701b445bcfbf0df040e2d6d375ad6a2f5cbb5a5b0f02211a4db7462aad7d",
+        "kind": "original"
+      }
+    },
+    {
+      "claim_id": "QC-00010",
+      "claim_date": "2026-03-31",
+      "customer_id": "C-101",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 750,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 11,
+        "record_id": "QC-00010",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "4ceaf10cfe1d11758da5b12c01e7c135618169e64d56f904f3133ab4d5f7204e",
+        "kind": "original"
+      }
+    },
+    {
+      "claim_id": "QC-00011",
+      "claim_date": "2026-04-02",
+      "customer_id": "C-104",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 1084,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 12,
+        "record_id": "QC-00011",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "feb9998c4b6737c4aeb032c45e5870b7aceedde182badb04b8278596816576fe",
+        "kind": "original"
+      }
+    },
+    {
+      "claim_id": "QC-00012",
+      "claim_date": "2026-03-16",
+      "customer_id": "C-104",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 677,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 13,
+        "record_id": "QC-00012",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "3fa3177480173d8664a1768b9c93656e0d5e94d9ff3d449638b75e7644d6b5ba",
+        "kind": "original"
+      }
+    },
+    {
+      "claim_id": "QC-00013",
+      "claim_date": "2026-04-01",
+      "customer_id": "C-104",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 979,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 14,
+        "record_id": "QC-00013",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "fe379e621703cd07e8f702b7ab7375f7d2fa999af5e539101cb7f3531bb3de00",
+        "kind": "original"
+      }
+    },
+    {
+      "claim_id": "QC-00014",
+      "claim_date": "2026-04-06",
+      "customer_id": "C-104",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 589,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 15,
+        "record_id": "QC-00014",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "69afe8bb1cdc0cd3ad4135521bf9c3188b871a0913cce2aef8248db89464ee89",
+        "kind": "original"
+      }
+    },
+    {
+      "claim_id": "QC-00015",
+      "claim_date": "2026-03-16",
+      "customer_id": "C-102",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 1068,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 16,
+        "record_id": "QC-00015",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "539a46ece066b809b44d3df372ea9c69fa376a84e85de3fb7af84af1465ab92f",
+        "kind": "original"
+      }
+    },
+    {
+      "claim_id": "QC-00016",
+      "claim_date": "2026-03-30",
+      "customer_id": "C-105",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 761,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 17,
+        "record_id": "QC-00016",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "ea72baedca1ee3ce00808cd359c8d69b4adcee646547a97b4853f145eb3f0a9e",
+        "kind": "original"
+      }
+    },
+    {
+      "claim_id": "QC-00017",
+      "claim_date": "2026-02-27",
+      "customer_id": "C-102",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 534,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 18,
+        "record_id": "QC-00017",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "fc2872991ebc2c926cd9e63910dd3b22a318e505727f053946b07bf4ece32266",
+        "kind": "original"
+      }
+    },
+    {
+      "claim_id": "QC-00018",
+      "claim_date": "2026-03-06",
+      "customer_id": "C-105",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 730,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 19,
+        "record_id": "QC-00018",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "af5aa7889d4defafa0ef40848613a4bc4a23d4d2b9115c44645e1a5de04b0df4",
+        "kind": "original"
+      }
+    },
+    {
+      "claim_id": "QC-00019",
+      "claim_date": "2026-03-30",
+      "customer_id": "C-105",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 977,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 20,
+        "record_id": "QC-00019",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "9ec6dad5d936ce410a784b0bf2911821ec0f5a7bcdc30f809f8b089068aafc8d",
+        "kind": "original"
+      }
+    },
+    {
+      "claim_id": "QC-00020",
+      "claim_date": "2026-03-02",
+      "customer_id": "C-102",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 742,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 21,
+        "record_id": "QC-00020",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "480bef5a1b6ff9557173978ff0b8768f3a4509d1161a422436f9b24b108f7e2a",
+        "kind": "original"
+      }
+    },
+    {
+      "claim_id": "QC-00021",
+      "claim_date": "2026-03-05",
+      "customer_id": "C-105",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 678,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 22,
+        "record_id": "QC-00021",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "7f6ebe7d67dc310113b0e3414818a9719b013dbfa8036c8ff99df42a806d76fa",
+        "kind": "original"
+      }
+    },
+    {
+      "claim_id": "QC-00022",
+      "claim_date": "2026-03-23",
+      "customer_id": "C-104",
+      "product_id": "PL-02",
+      "batch_id": "B-02-2602-01",
+      "lot_id": "LOT-B-2602-P",
+      "claim_type": "피부트러블",
+      "defect_confirmed": true,
+      "qty_affected": 947,
+      "status": "확정",
+      "source": {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 23,
+        "record_id": "QC-00022",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "14a26a9b1699aad17ee21ac0e2ccbbbaba0d2b183d311d72aa0b7a74d202f1b2",
+        "kind": "original"
+      }
+    }
+  ],
+  "shipments": [
+    {
+      "shipment_id": "SBL-001340",
+      "batch_id": "B-02-2602-01",
+      "customer_id": "C-101",
+      "product_id": "PL-02",
+      "order_date": "2026-01-19",
+      "ship_date": "2026-02-10",
+      "shipped_qty": 28701,
+      "source": {
+        "source_id": "shipments",
+        "path": "01_corevia/quality/shipment_batch_link_cv.csv",
+        "row_number": 1341,
+        "record_id": "SBL-001340",
+        "sha256": "89a39a1774779ea6917ec0559007818c80067f29b68e44fb26a5d9d249afa01a",
+        "row_hash": "b433051df8936d864ba0b70e7d3e57d462b531f8be99d6875fb62b190ad4da91",
+        "kind": "original"
+      }
+    },
+    {
+      "shipment_id": "SBL-001341",
+      "batch_id": "B-02-2602-01",
+      "customer_id": "C-102",
+      "product_id": "PL-02",
+      "order_date": "2026-01-29",
+      "ship_date": "2026-02-09",
+      "shipped_qty": 30440,
+      "source": {
+        "source_id": "shipments",
+        "path": "01_corevia/quality/shipment_batch_link_cv.csv",
+        "row_number": 1342,
+        "record_id": "SBL-001341",
+        "sha256": "89a39a1774779ea6917ec0559007818c80067f29b68e44fb26a5d9d249afa01a",
+        "row_hash": "2f5cd8597fff57a0afa939cb6ef76fe3694477997f29de1cec825abffa628a24",
+        "kind": "original"
+      }
+    },
+    {
+      "shipment_id": "SBL-001342",
+      "batch_id": "B-02-2602-01",
+      "customer_id": "C-104",
+      "product_id": "PL-02",
+      "order_date": "2026-01-22",
+      "ship_date": "2026-02-16",
+      "shipped_qty": 31508,
+      "source": {
+        "source_id": "shipments",
+        "path": "01_corevia/quality/shipment_batch_link_cv.csv",
+        "row_number": 1343,
+        "record_id": "SBL-001342",
+        "sha256": "89a39a1774779ea6917ec0559007818c80067f29b68e44fb26a5d9d249afa01a",
+        "row_hash": "f7e145a36b98a43a05019c0d2ae44d36aa507288b6fbb05f22570de37f0f8289",
+        "kind": "original"
+      }
+    },
+    {
+      "shipment_id": "SBL-001343",
+      "batch_id": "B-02-2602-01",
+      "customer_id": "C-103",
+      "product_id": "PL-02",
+      "order_date": "2026-01-26",
+      "ship_date": "2026-02-17",
+      "shipped_qty": 55211,
+      "source": {
+        "source_id": "shipments",
+        "path": "01_corevia/quality/shipment_batch_link_cv.csv",
+        "row_number": 1344,
+        "record_id": "SBL-001343",
+        "sha256": "89a39a1774779ea6917ec0559007818c80067f29b68e44fb26a5d9d249afa01a",
+        "row_hash": "68cf0e67d42fe8de39baadc3d49ad56e1a85c82a04213272f08879e8727c7167",
+        "kind": "original"
+      }
+    }
+  ],
+  "customers": [
+    {
+      "shipped_qty": 28701,
+      "shipment_count": 1,
+      "confirmed_claim_qty": 2882,
+      "unconfirmed_claim_qty": 0,
+      "customer_id": "C-101",
+      "customer_name": "뷰티메가리테일",
+      "link_status": "sbl_confirmed_financial_mapping_unknown"
+    },
+    {
+      "shipped_qty": 30440,
+      "shipment_count": 1,
+      "confirmed_claim_qty": 3316,
+      "unconfirmed_claim_qty": 0,
+      "customer_id": "C-102",
+      "customer_name": "홈앤쇼핑네트워크",
+      "link_status": "sbl_confirmed_financial_mapping_unknown"
+    },
+    {
+      "shipped_qty": 31508,
+      "shipment_count": 1,
+      "confirmed_claim_qty": 6382,
+      "unconfirmed_claim_qty": 0,
+      "customer_id": "C-104",
+      "customer_name": "그린마트체인",
+      "link_status": "sbl_confirmed_financial_mapping_unknown"
+    },
+    {
+      "shipped_qty": 55211,
+      "shipment_count": 1,
+      "confirmed_claim_qty": 0,
+      "unconfirmed_claim_qty": 0,
+      "customer_id": "C-103",
+      "customer_name": "라라드럭스토어",
+      "link_status": "sbl_confirmed_financial_mapping_unknown"
+    },
+    {
+      "shipped_qty": 0,
+      "shipment_count": 0,
+      "confirmed_claim_qty": 5320,
+      "unconfirmed_claim_qty": 0,
+      "customer_id": "C-105",
+      "customer_name": "더뷰티클럽",
+      "link_status": "claims_without_sbl"
+    }
+  ],
+  "analysis": {
+    "batch_id": "B-02-2602-01",
+    "product_name": "더마",
+    "produced_qty": 150745,
+    "confirmed_qty": 17900,
+    "original_confirmed_qty": 17900,
+    "unconfirmed_qty": 0,
+    "shipped_qty": 145860,
+    "defect_rate_pct": 11.874357,
+    "recall_eligible": true,
+    "classification": "recall_candidate",
+    "formula": "확정 17,900 EA ÷ 생산 150,745 EA × 100",
+    "denominator_basis": "prod_batch_log_cv.produced_qty (생산 배치 수량)",
+    "threshold_pct": 10,
+    "calculation_kind": "derived_from_original",
+    "evidence": [
+      {
+        "source_id": "batches",
+        "path": "01_corevia/production/prod_batch_log_cv.csv",
+        "row_number": 227,
+        "record_id": "B-02-2602-01",
+        "sha256": "6c49f0268bd75c21dee53bb8e7c6cedffcf825b836f1d42c822671fb1ebab408",
+        "row_hash": "a09f242e0576f22b54724b98977a2a108920e3ba622364de838f58dc645db0bf",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 2,
+        "record_id": "QC-00001",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "70ae2199d6a64bf05a4a547fcbedc07ecc21c843367f00413767910699f40586",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 3,
+        "record_id": "QC-00002",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "ebeab46924181090fe0ce3f590b8c2f17333484f11ac11a7e97f737a39dc3545",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 4,
+        "record_id": "QC-00003",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "2452d3e903a921c8c6a5ec1e867e08f9a0acca75b54c0e96259bf0b767845909",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 5,
+        "record_id": "QC-00004",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "253086341d6eac0124ca39bf2bc414bd43badf63e990679807cdc7d4fd58004d",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 6,
+        "record_id": "QC-00005",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "1b063e6e4d73479951dd74bb50f2cc513b7418c00712e8472378ad9d75f357f9",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 7,
+        "record_id": "QC-00006",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "7a27a2fab8c406d43ddc1b889a0a1610847501952f75158030c7a48dcd2eaeef",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 8,
+        "record_id": "QC-00007",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "51394302a39abae0b70c45b4b45cfed486fc4212b8b3619457b4580d2d60ea3d",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 9,
+        "record_id": "QC-00008",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "0f3bb7367f8cc7131515d3e1284bf77e4a5b40a4e911cf50a3c1e561ad6905f1",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 10,
+        "record_id": "QC-00009",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "32bc701b445bcfbf0df040e2d6d375ad6a2f5cbb5a5b0f02211a4db7462aad7d",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 11,
+        "record_id": "QC-00010",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "4ceaf10cfe1d11758da5b12c01e7c135618169e64d56f904f3133ab4d5f7204e",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 12,
+        "record_id": "QC-00011",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "feb9998c4b6737c4aeb032c45e5870b7aceedde182badb04b8278596816576fe",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 13,
+        "record_id": "QC-00012",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "3fa3177480173d8664a1768b9c93656e0d5e94d9ff3d449638b75e7644d6b5ba",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 14,
+        "record_id": "QC-00013",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "fe379e621703cd07e8f702b7ab7375f7d2fa999af5e539101cb7f3531bb3de00",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 15,
+        "record_id": "QC-00014",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "69afe8bb1cdc0cd3ad4135521bf9c3188b871a0913cce2aef8248db89464ee89",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 16,
+        "record_id": "QC-00015",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "539a46ece066b809b44d3df372ea9c69fa376a84e85de3fb7af84af1465ab92f",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 17,
+        "record_id": "QC-00016",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "ea72baedca1ee3ce00808cd359c8d69b4adcee646547a97b4853f145eb3f0a9e",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 18,
+        "record_id": "QC-00017",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "fc2872991ebc2c926cd9e63910dd3b22a318e505727f053946b07bf4ece32266",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 19,
+        "record_id": "QC-00018",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "af5aa7889d4defafa0ef40848613a4bc4a23d4d2b9115c44645e1a5de04b0df4",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 20,
+        "record_id": "QC-00019",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "9ec6dad5d936ce410a784b0bf2911821ec0f5a7bcdc30f809f8b089068aafc8d",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 21,
+        "record_id": "QC-00020",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "480bef5a1b6ff9557173978ff0b8768f3a4509d1161a422436f9b24b108f7e2a",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 22,
+        "record_id": "QC-00021",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "7f6ebe7d67dc310113b0e3414818a9719b013dbfa8036c8ff99df42a806d76fa",
+        "kind": "original"
+      },
+      {
+        "source_id": "claims",
+        "path": "01_corevia/quality/qc_claims_cv.csv",
+        "row_number": 23,
+        "record_id": "QC-00022",
+        "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+        "row_hash": "14a26a9b1699aad17ee21ac0e2ccbbbaba0d2b183d311d72aa0b7a74d202f1b2",
+        "kind": "original"
+      }
+    ],
+    "recovery_plan": {
+      "status": "needs_information",
+      "quantity": null,
+      "daily_capacity": 200,
+      "production_days": null,
+      "production_start_date": null,
+      "production_end_date": null,
+      "earliest_ship_date": null,
+      "due_date": "2026-07-20",
+      "delay_days": null,
+      "feasible": false,
+      "blockers": [
+        "실제 고객 보유량·재공급 필요 수량 미확인",
+        "영업팀 고객 보유량 확인 회신 필요",
+        "생산팀 가용 슬롯·원료·수량 확인 회신 필요",
+        "품질팀 재공급 품질 확인 회신 필요"
+      ],
+      "kind": "simulation",
+      "capacity_snapshot": {
+        "plant_id": "F1",
+        "line_id": "L-02",
+        "product_id": "PL-02",
+        "capacity_qty": 1949480,
+        "utilization_pct": 97.0,
+        "snapshot_date": "2026-06-30",
+        "source": {
+          "source_id": "capacity",
+          "path": "01_corevia/production/strat_capacity_cv.csv",
+          "row_number": 3,
+          "record_id": "F1",
+          "sha256": "d8bff0e267868a1d736dfd309dc67ae5c9a46c73d98136c406f7f9df73b99636",
+          "row_hash": "58e9fd36d104742e254b7bc588d362005535987a8ac41630005645c6dc2e4087",
+          "kind": "original"
+        }
+      },
+      "residual_capacity_qty": 58484,
+      "daily_capacity_limit": 224,
+      "capacity_period_assumption": "annual_not_specified_in_original",
+      "working_days_assumption": 261,
+      "assumptions": [
+        "원본 capacity_qty의 기간은 미명시. 보수적 연간 가정과 연 261영업일로 잔여능력을 제한하는 모의 계산",
+        "일 200 EA 기본값은 모의 제안이며 원본 capacity × (1−가동률) / 261 이내에서 생산팀 확인 필요",
+        "월~금 영업일, 공휴일 없음. 사건 적용일은 0일차이며 생산·리드타임·QA·지연일을 순차 합산",
+        "기존 라인만 사용. 대체 원료·F2 전환을 승인 없이 허용하지 않음",
+        "출하 이력은 현재 보유량이나 회수 완료량이 아님. 재공급 수량은 별도 모의 확인 입력"
+      ]
+    },
+    "missing_information": [
+      "실제 고객 보유량·재공급 필요 수량 미확인",
+      "영업팀 고객 보유량 확인 회신 필요",
+      "생산팀 가용 슬롯·원료·수량 확인 회신 필요",
+      "품질팀 재공급 품질 확인 회신 필요",
+      "SBL–SH 직접 연결, 회수 실적, 실제 고객 보유량 원본 없음"
+    ],
+    "warnings": [
+      "SBL → SH 검증 매핑 없음 · 매출 영향 미산정",
+      "생산량과 SBL 출하 합계는 모집단이 다름. 생산 수량을 불량률 분모로 고정",
+      "외부 보도와 예비검사 보류만으로 회수를 확정하지 않음",
+      "모의 의결·회신·조건은 원본 기록을 수정하지 않음",
+      "C-105 클레임이 있으나 해당 배치 SBL 출하 없음 · 고객 범위 확인 필요"
+    ],
+    "supply_constraints": {
+      "product": {
+        "product_id": "PL-02",
+        "product_name": "더마",
+        "revenue_share_pct": "20.0",
+        "market_growth_pct": "18.0",
+        "main_material_id": "M-B",
+        "primary_supplier_id": "V-205",
+        "production_line": "F1",
+        "is_f1_dedicated": true,
+        "source": {
+          "source_id": "products",
+          "path": "01_corevia/master/m_product_cv.csv",
+          "row_number": 3,
+          "record_id": "PL-02",
+          "sha256": "a4c6a68ca499fcd5667b45d4b4737cc7d46d430a685267e1f6eaaf54cf496bf6",
+          "row_hash": "32833dec2899e9456059acca0b8005c5760617994633d3eb8f75b6a454fab08f",
+          "kind": "original"
+        }
+      },
+      "material": {
+        "material_id": "M-B",
+        "material_name": "특허 활성성분",
+        "sourcing_region": "해외",
+        "currency": "USD",
+        "supplier_id": "V-205",
+        "contract_type": "2년 장기+MOQ+자동갱신·위약",
+        "is_exclusive": true,
+        "unit": "kg",
+        "effective_date": "2024-01-01",
+        "source": {
+          "source_id": "materials",
+          "path": "01_corevia/master/m_material_cv.csv",
+          "row_number": 3,
+          "record_id": "M-B",
+          "sha256": "be05f5dd87eaa1443e95da0322cae5007ba89579af91aa3b3b512b5b5e6b30db",
+          "row_hash": "765d9d58342644366d3a8aaad7718f1d060eae87ae43f8543f40f06b76706de4",
+          "kind": "original"
+        }
+      },
+      "line_capacity": {
+        "plant_id": "F1",
+        "line_id": "L-02",
+        "product_id": "PL-02",
+        "capacity_qty": 1949480,
+        "utilization_pct": 97.0,
+        "snapshot_date": "2026-06-30",
+        "source": {
+          "source_id": "capacity",
+          "path": "01_corevia/production/strat_capacity_cv.csv",
+          "row_number": 3,
+          "record_id": "F1",
+          "sha256": "d8bff0e267868a1d736dfd309dc67ae5c9a46c73d98136c406f7f9df73b99636",
+          "row_hash": "58e9fd36d104742e254b7bc588d362005535987a8ac41630005645c6dc2e4087",
+          "kind": "original"
+        }
+      },
+      "contract_effect": "독점 원료 및 전용 공장 제약 유지. 대체 공급·전환은 별도 검토/승인 필요"
+    },
+    "alternatives": [
+      {
+        "id": "existing_line",
+        "name": "기존 라인 순차 재공급",
+        "description": "영업 수량 확인 → 생산 슬롯 확인 → 품질 확인 후 고객 일정 확약",
+        "status": "conditional"
+      },
+      {
+        "id": "staged",
+        "name": "부분 공급·희망일 재협의",
+        "description": "생산 지연 시 고객 우선순위와 수량 분할을 영업이 협의. 모의 확약 전 자동 출하 없음",
+        "status": "conditional"
+      },
+      {
+        "id": "f2",
+        "name": "F2 전환 별도 투자 검토",
+        "description": "원본 OPT-02: 12억원·7주·연 600,000 EA, 원료 재계약·처방 재검증 필요. 본 회차에서 자동 집행하지 않음",
+        "status": "design_only"
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "id": "TASK-38459528F7",
+      "case_id": "CASE-001",
+      "type": "inventory_check",
+      "title": "고객 보유량·재공급 수량 확인",
+      "department": "sales",
+      "owner": "영업팀",
+      "status": "open",
+      "note": "담당자 모의 회신 대기 · 외부 발송 없음",
+      "revision": 1,
+      "blocked_reason": null,
+      "created_at": "2026-11-09T03:38:22.120560Z",
+      "updated_at": "2026-11-09T03:38:22.120560Z"
+    },
+    {
+      "id": "TASK-8F3B866AE4",
+      "case_id": "CASE-001",
+      "type": "mapping_check",
+      "title": "SBL–SH 연결 및 매출 영향 확인",
+      "department": "sales",
+      "owner": "영업팀",
+      "status": "open",
+      "note": "검증 매핑 없음. 동일 고객·날짜·유사 코드를 근거로 임의 연결하지 않음",
+      "revision": 1,
+      "blocked_reason": null,
+      "created_at": "2026-11-09T03:38:22.120586Z",
+      "updated_at": "2026-11-09T03:38:22.120586Z"
+    },
+    {
+      "id": "TASK-79A6E084E8",
+      "case_id": "CASE-001",
+      "type": "customer_scope_check",
+      "title": "클레임 고객·출하 범위 불일치 확인",
+      "department": "sales",
+      "owner": "영업팀",
+      "status": "open",
+      "note": "C-105 클레임 존재 / 해당 배치 SBL 없음. 고객을 누락하거나 임의 SH 연결하지 않음",
+      "revision": 1,
+      "blocked_reason": null,
+      "created_at": "2026-11-09T03:38:22.120603Z",
+      "updated_at": "2026-11-09T03:38:22.120603Z"
+    },
+    {
+      "id": "TASK-1F69C20E2A",
+      "case_id": "CASE-001",
+      "type": "root_cause",
+      "title": "미확정 검사·원인 조사 계속",
+      "department": "quality",
+      "owner": "품질팀",
+      "status": "open",
+      "note": "원인조사는 회수 판단과 별도 트랙. 조사 완료 전에도 기준 충족 건 상신",
+      "revision": 1,
+      "blocked_reason": null,
+      "created_at": "2026-11-09T03:38:22.120611Z",
+      "updated_at": "2026-11-09T03:38:22.120611Z"
+    }
+  ],
+  "decisions": [],
+  "audit": [
+    {
+      "id": 1,
+      "case_id": "CASE-001",
+      "action": "case_created",
+      "actor": "system",
+      "created_at": "2026-11-09T03:38:22.120626Z",
+      "payload": {
+        "batch_id": "B-02-2602-01",
+        "conditions_kind": "participant_simulation",
+        "source_fingerprint": "7c50e0d24dba472012df72edfc9c38debcb41da208103884559abd1ab9262b4b",
+        "status": "draft"
+      },
+      "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "event_hash": "9a978225a985ebe5ba1fafa8e19d9fa3ddca6e028edb5b4fcef080be1e841061"
+    }
+  ],
+  "ai": {
+    "connected": false,
+    "configured": false,
+    "status": "not_configured",
+    "provider": "OpenAI-compatible adapter",
+    "model": null,
+    "message": "모델 미연결 · 계산·분류·작업 생성은 결정론적 규칙 엔진",
+    "network_execution": "operator_opt_in_required",
+    "can_approve": false,
+    "brief": null
+  },
+  "sources": [
+    {
+      "id": "batches",
+      "path": "01_corevia/production/prod_batch_log_cv.csv",
+      "sha256": "6c49f0268bd75c21dee53bb8e7c6cedffcf825b836f1d42c822671fb1ebab408",
+      "kind": "original",
+      "row_count": 480
+    },
+    {
+      "id": "claims",
+      "path": "01_corevia/quality/qc_claims_cv.csv",
+      "sha256": "97ab9691178f36ba5e6aae5dbe3004f767187500f2ed8ad6eb604d2e11c5b248",
+      "kind": "original",
+      "row_count": 165
+    },
+    {
+      "id": "shipments",
+      "path": "01_corevia/quality/shipment_batch_link_cv.csv",
+      "sha256": "89a39a1774779ea6917ec0559007818c80067f29b68e44fb26a5d9d249afa01a",
+      "kind": "original",
+      "row_count": 1431
+    },
+    {
+      "id": "sales_shipments",
+      "path": "01_corevia/sales/sales_shipments_cv.csv",
+      "sha256": "86553f47628b0fa550af9b532b3d9ad5f1b778cc165e696544de34ae96dfed09",
+      "kind": "original",
+      "row_count": 17987
+    },
+    {
+      "id": "customers",
+      "path": "01_corevia/master/m_customer_cv.csv",
+      "sha256": "451944a7bf1b77863e53c31fc222b014f84c7baa36b678ab2e6b9c8bc3701bf0",
+      "kind": "original",
+      "row_count": 12
+    },
+    {
+      "id": "products",
+      "path": "01_corevia/master/m_product_cv.csv",
+      "sha256": "a4c6a68ca499fcd5667b45d4b4737cc7d46d430a685267e1f6eaaf54cf496bf6",
+      "kind": "original",
+      "row_count": 6
+    },
+    {
+      "id": "materials",
+      "path": "01_corevia/master/m_material_cv.csv",
+      "sha256": "be05f5dd87eaa1443e95da0322cae5007ba89579af91aa3b3b512b5b5e6b30db",
+      "kind": "original",
+      "row_count": 6
+    },
+    {
+      "id": "capacity",
+      "path": "01_corevia/production/strat_capacity_cv.csv",
+      "sha256": "d8bff0e267868a1d736dfd309dc67ae5c9a46c73d98136c406f7f9df73b99636",
+      "kind": "original",
+      "row_count": 6
+    },
+    {
+      "id": "capex",
+      "path": "01_corevia/production/strat_capex_plan_cv.csv",
+      "sha256": "bafd2c76ee394e6d0a5bdf082c6b88a30ff636562a8ae28c5ef1baba7a277ebc",
+      "kind": "original",
+      "row_count": 2
+    },
+    {
+      "id": "policy",
+      "path": "01_corevia/quality/quality_policy_cv.md",
+      "sha256": "352b77edaf66a4dd3bbb368ec9c778652898262bdc37761a70db51d401526a74",
+      "kind": "original",
+      "row_count": null
+    },
+    {
+      "id": "authority",
+      "path": "00_common/approval_authority_policy.md",
+      "sha256": "889f7eb5018b455f05e9c934686c4926e97ef7624d5405975a3eedc5b107769d",
+      "kind": "original",
+      "row_count": null
+    },
+    {
+      "id": "calculations",
+      "path": "00_common/calculation_definitions.md",
+      "sha256": "8a62b6f6752eb2f2f1a465aa2b95028fb78f8008d5b201407c269525eaf48ece",
+      "kind": "original",
+      "row_count": null
+    },
+    {
+      "id": "dictionary",
+      "path": "00_common/data_dictionary.md",
+      "sha256": "74c2aae386fe01e4b6f49029882d92f56644be23187bf2dcf9d778f2a0ddd677",
+      "kind": "original",
+      "row_count": null
+    },
+    {
+      "id": "news",
+      "path": "05_external/news/ext_news_quality_incident.md",
+      "sha256": "f2bc4314362dae8574e13c5578466cbe50e434ea703f7d95a9dbd805dbd1eadd",
+      "kind": "original",
+      "row_count": null
+    }
+  ],
+  "source_fingerprint": "7c50e0d24dba472012df72edfc9c38debcb41da208103884559abd1ab9262b4b",
+  "review_scope": "recall"
+}

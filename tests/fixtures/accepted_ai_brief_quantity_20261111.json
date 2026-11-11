@@ -1,0 +1,127 @@
+{
+  "approval_effect": "none",
+  "canonical_facts_validated": true,
+  "content": "{\"alternatives\":[\"기존 라인 순차 재공급: 영업·생산·품질팀 협력으로 단계적 공급 추진(조건부)\",\"부분 공급·희망일 재협의: 생산 지연 시 고객 우선순위 조정하여 분할 출하(조건부)\",\"F2 전환 별도 검토: 연 600,000 EA 규모 투자·원료 재계약 필요(설계 단계, 본 심의 대상 아님)\"],\"evidence_ids\":[\"B-02-2602-01\",\"QC-00001\",\"QC-00002\",\"QC-00003\",\"QC-00004\",\"QC-00005\",\"QC-00006\",\"QC-00007\",\"QC-00008\",\"QC-00009\",\"QC-00010\",\"QC-00011\",\"QC-00012\",\"QC-00013\",\"QC-00014\",\"QC-00015\",\"QC-00016\",\"QC-00017\",\"QC-00018\",\"QC-00019\",\"QC-00020\",\"QC-00021\",\"QC-00022\"],\"facts\":{\"confirmed_qty\":17900,\"defect_rate_pct\":11.874357,\"produced_qty\":150745,\"recall_eligible\":true,\"recall_threshold_pct\":10},\"risks\":[\"배치 불량률 11.87%는 회수 기준 10%를 초과하며, 이미 승인된 회수 의결의 잔여 공급 확인만 진행 중(확정 고객 보유량·출하 범위 재확인 필수)\",\"F1 공장 가동률 97% 고도화로 일일 생산 한도 224 EA(연 261업무일 가정)이며, 17,900 EA 전량 재공급은 기존 라인 단독으로 약 79~80일 소요로 대체 원료·라인 검토 필요 여부 확인 미결\",\"클레임 고객 범위 불명확: C-105는 해당 배치 출하 기록 없으나 클레임 접수되어 배치 회수 범위·고객 공급 범위 일치 확인 필요\"],\"summary\":\"배치 B-02-2602-01(더마)은 이미 회수 승인되었으며, 확정 불량 17,900 EA(불량률 11.87%)의 잔여 공급 대응을 검토 중입니다. 기존 라인(L-02, F1) 생산능력은 연간 기준 모의 분석하되, 실제 고객 보유량 확인·출하 이력과 클레임 범위 매핑·생산일정 및 원료 확보 여부를 영업·생산·품질팀에서 각각 확인해야 합니다. 대체 공급(F2 전환 등)은 별도 승인 대상입니다.\"}",
+  "evidence_ids_validated": true,
+  "generated_at": "2026-11-11T02:13:31.883009Z",
+  "human_review_required": true,
+  "id": "AI-45c0e54783bf2ac9",
+  "input_contract_version": 3,
+  "input_fingerprint": "b338423fe6a9501c10e4ec10c95ccdc895d28e62e8f162c6b1646a818e837009",
+  "kind": "model_generated_advice",
+  "model": "claude-haiku-4-5-20251001",
+  "narrative_screening": {
+    "human_source_comparison_required": true,
+    "scope": "자유서술의 수치·식별자·정책·실행 주장은 자동 사실검증하지 않음.",
+    "semantic_verified": false,
+    "status": "not_semantically_verified",
+    "version": 2,
+    "workflow_authority": "none"
+  },
+  "prompt_hash": "6a4d31c4a80e4e95d577a775c547ecaf52fc1ac88974d1a6e6e6a8ba35d6c1b3",
+  "provider": "Anthropic",
+  "reference_context": {
+    "capacity": {
+      "capacity_period_assumption": "annual_not_specified_in_original",
+      "capacity_qty": 1949480,
+      "daily_capacity_limit": 224,
+      "daily_formula": "floor(residual_capacity_qty / working_days_assumption)",
+      "kind": "simulation_assumption_not_confirmed_availability",
+      "residual_capacity_qty": 58484,
+      "residual_formula": "floor(capacity_qty * (100 - utilization_pct) / 100)",
+      "snapshot_date": "2026-06-30",
+      "source": {
+        "kind": "original",
+        "path": "01_corevia/production/strat_capacity_cv.csv",
+        "record_id": "F1",
+        "row_hash": "58e9fd36d104742e254b7bc588d362005535987a8ac41630005645c6dc2e4087",
+        "row_number": 3,
+        "sha256": "d8bff0e267868a1d736dfd309dc67ae5c9a46c73d98136c406f7f9df73b99636",
+        "source_id": "capacity"
+      },
+      "utilization_pct": 97.0,
+      "working_days_assumption": 261
+    },
+    "customer_scope": {
+      "batch_shipment_customers": [
+        "C-101",
+        "C-102",
+        "C-103",
+        "C-104"
+      ],
+      "claim_without_batch_shipment": [
+        "C-105"
+      ],
+      "shipment_is_current_inventory": false
+    },
+    "kind": "application_reference_not_model_output",
+    "workflow": {
+      "correction_review_required": false,
+      "external_execution": false,
+      "latest_decision": {
+        "created_at": "2026-11-10T11:09:14.218878Z",
+        "decision": "approve",
+        "id": 1,
+        "quality_revision": 1,
+        "revision": 1,
+        "scope": "recall"
+      },
+      "recall_authorized": true,
+      "review_scope": "supply",
+      "simulated_decision": true,
+      "status": "approved"
+    }
+  },
+  "reserved_cost_usd": 0.21024,
+  "review_revision": 1,
+  "structured": {
+    "alternatives": [
+      "기존 라인 순차 재공급: 영업·생산·품질팀 협력으로 단계적 공급 추진(조건부)",
+      "부분 공급·희망일 재협의: 생산 지연 시 고객 우선순위 조정하여 분할 출하(조건부)",
+      "F2 전환 별도 검토: 연 600,000 EA 규모 투자·원료 재계약 필요(설계 단계, 본 심의 대상 아님)"
+    ],
+    "evidence_ids": [
+      "B-02-2602-01",
+      "QC-00001",
+      "QC-00002",
+      "QC-00003",
+      "QC-00004",
+      "QC-00005",
+      "QC-00006",
+      "QC-00007",
+      "QC-00008",
+      "QC-00009",
+      "QC-00010",
+      "QC-00011",
+      "QC-00012",
+      "QC-00013",
+      "QC-00014",
+      "QC-00015",
+      "QC-00016",
+      "QC-00017",
+      "QC-00018",
+      "QC-00019",
+      "QC-00020",
+      "QC-00021",
+      "QC-00022"
+    ],
+    "facts": {
+      "confirmed_qty": 17900,
+      "defect_rate_pct": 11.874357,
+      "produced_qty": 150745,
+      "recall_eligible": true,
+      "recall_threshold_pct": 10
+    },
+    "risks": [
+      "배치 불량률 11.87%는 회수 기준 10%를 초과하며, 이미 승인된 회수 의결의 잔여 공급 확인만 진행 중(확정 고객 보유량·출하 범위 재확인 필수)",
+      "F1 공장 가동률 97% 고도화로 일일 생산 한도 224 EA(연 261업무일 가정)이며, 17,900 EA 전량 재공급은 기존 라인 단독으로 약 79~80일 소요로 대체 원료·라인 검토 필요 여부 확인 미결",
+      "클레임 고객 범위 불명확: C-105는 해당 배치 출하 기록 없으나 클레임 접수되어 배치 회수 범위·고객 공급 범위 일치 확인 필요"
+    ],
+    "summary": "배치 B-02-2602-01(더마)은 이미 회수 승인되었으며, 확정 불량 17,900 EA(불량률 11.87%)의 잔여 공급 대응을 검토 중입니다. 기존 라인(L-02, F1) 생산능력은 연간 기준 모의 분석하되, 실제 고객 보유량 확인·출하 이력과 클레임 범위 매핑·생산일정 및 원료 확보 여부를 영업·생산·품질팀에서 각각 확인해야 합니다. 대체 공급(F2 전환 등)은 별도 승인 대상입니다."
+  },
+  "usage": {
+    "input_tokens": 5475,
+    "output_tokens": 894
+  },
+  "verification_warning": "응답 형식, facts 수치, evidence_ids의 존재만 검사했습니다. AI가 작성한 설명과 정책 해석은 아직 검증되지 않았습니다. 본문의 숫자·근거 인용·권고·실행 주장은 거짓일 수 있습니다. 원본에 근거한 자신의 판단을 별도로 기록하세요."
+}

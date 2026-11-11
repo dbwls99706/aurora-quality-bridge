@@ -1,0 +1,7 @@
+material_id|material_name|sourcing_region|currency|supplier_id|contract_type|is_exclusive|unit|effective_date
+M-A|히알루론산|해외|USD|V-201|연간 단가계약|False|kg|2024-01-01
+M-B|특허 활성성분|해외|USD|V-205|2년 장기+MOQ+자동갱신·위약|True|kg|2024-01-01
+M-C|자외선차단제|국내|KRW|V-212|분기 계약|False|kg|2024-01-01
+M-D|안료·펄|국내|KRW|V-217|분기+스팟|False|kg|2024-01-01
+M-E|계면활성제|해외|USD|V-220|분기|False|kg|2024-01-01
+M-F|글리세린|국내|KRW|V-224|연간 계약|False|kg|2024-01-01

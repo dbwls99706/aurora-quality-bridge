@@ -1,0 +1,28 @@
+// Offline DOM verification; no provider or external requests.
+const {JSDOM}=require('jsdom'),fs=require('fs'),path=require('path'),assert=require('assert');
+const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p),'utf8');
+const dom=new JSDOM(read('static/index.html'),{url:'http://127.0.0.1/workspace?case=CASE-001#workspace',runScripts:'outside-only',pretendToBeVisual:true});
+const w=dom.window,d=w.document;w.AbortController=AbortController;
+w.eval(read('static/app.js').replace("hydrateIcons();mobileNav();setRole(S.role,false);loadState(true);",'')+';window.qa={S,renderAIGrounding,renderAIBrief,showCaseAI,aiReviewModal,aiEvidenceRecord};');
+const {S}=w.qa;S.state=JSON.parse(read('backend_sample_state.json'));S.detail=JSON.parse(read('backend_sample_detail.json'));S.selected=S.detail.id;S.details.set(S.detail.id,S.detail);
+const brief=JSON.parse(read('tests/fixtures/accepted_ai_brief_20261111.json'));
+S.detail.recall_authorized=true;S.detail.status='approved';brief.stale=false;brief.review_revision=S.detail.review_revision;
+S.detail.ai={configured:false,brief,reviews:[]};
+let section=d.createElement('div');section.innerHTML=w.qa.renderAIBrief(S.detail);d.body.append(section);
+const panel=section.querySelector('.ai-grounding');assert(panel.textContent.includes('모의 회수 의결 승인됨'));
+for(const value of ['58,484 EA','261영업일','224 EA/영업일','원본 산정 기간 미기재','연간 생산능력으로 가정','확정 가용량·출고량·재고가 아닙니다'])assert(panel.textContent.includes(value),value);
+assert(!panel.textContent.includes('품질위원회 승인 전'));assert(!section.querySelector('.ai-untrusted').open);
+assert(section.querySelector('.ai-untrusted').textContent.includes('품질위원회 승인 전'),'preserve actual erroneous narrative, never silently rewrite it');
+assert(section.textContent.includes('본문의 생산능력·정책·고객 범위 주장까지 검증한 인용이 아닙니다'));
+assert(panel.compareDocumentPosition(section.querySelector('.ai-untrusted'))&w.Node.DOCUMENT_POSITION_FOLLOWING);
+S.detail.customers=[{customer_id:'C-105',link_status:'claims_without_sbl',shipment_count:0},...['C-101','C-102','C-103','C-104'].map(customer_id=>({customer_id,shipment_count:1}))];
+section.innerHTML=w.qa.renderAIGrounding(S.detail);assert(section.textContent.includes('SBL 출하 기록 있음: C-101, C-102, C-103, C-104'));assert(section.textContent.includes('해당 배치 SBL 없음: C-105'));
+S.detail.correction_review_required=true;S.detail.recall_authorized=false;section.innerHTML=w.qa.renderAIGrounding(S.detail);assert(section.textContent.includes('정정 검토 필요'));assert(!section.textContent.includes('의결 승인됨'));
+S.detail.correction_review_required=false;section.innerHTML=w.qa.renderAIGrounding(S.detail);assert(section.textContent.includes('유효한 모의 회수 승인 없음'));
+S.detail.ai.reference_context={workflow:{recall_authorized:true},capacity:{capacity_qty:null},customer_scope:{claim_without_batch_shipment:['<img src=x onerror=alert(1)>'],batch_shipment_customers:[]}};
+section.innerHTML=w.qa.renderAIGrounding(S.detail);assert(section.textContent.includes('생산능력 원본 없음'));assert(!section.textContent.includes('58,484'));assert(!section.querySelector('img'));assert(section.textContent.includes('<img'));
+assert.equal(w.qa.aiEvidenceRecord(S.detail).current_reference_context,S.detail.ai.reference_context);
+S.detail.ai.brief.stale=true;section.innerHTML=w.qa.renderAIBrief(S.detail);assert(section.querySelector('[data-action="review-ai"]').disabled);
+assert(section.textContent.includes('다시 생성 필요'));
+S.detail.ai.brief=null;section.innerHTML=w.qa.renderAIBrief(S.detail);assert(section.querySelector('.ai-grounding'),'comparison facts are visible before and without AI');
+dom.window.close();console.log('AI reference UI PASS: approved/correction/unapproved states, source/annual/261-day assumptions, source-customer direction, untrusted actual prose preserved, no fabricated missing capacity, escaped content, stale review disabled, export context, no-AI fallback');

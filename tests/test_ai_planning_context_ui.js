@@ -1,0 +1,28 @@
+// DOM replay only; this is not a fresh model or visual-browser certification.
+const {JSDOM}=require('jsdom'),fs=require('fs'),path=require('path'),assert=require('assert');
+const root=path.resolve(__dirname,'..'),read=p=>fs.readFileSync(path.join(root,p),'utf8');
+const dom=new JSDOM(read('static/index.html'),{url:'http://127.0.0.1/workspace',runScripts:'outside-only',pretendToBeVisual:true});
+const w=dom.window;w.AbortController=AbortController;
+w.eval(read('static/app.js').replace("hydrateIcons();mobileNav();setRole(S.role,false);loadState(true);",'')+';window.qa={S,renderAIGrounding,renderAIBrief};');
+const {S}=w.qa;S.state=JSON.parse(read('backend_sample_state.json'));S.detail=JSON.parse(read('backend_sample_detail.json'));
+const detail=S.detail;detail.recall_authorized=true;detail.status='approved';
+detail.ai={configured:false,reviews:[],brief:JSON.parse(read('tests/fixtures/accepted_ai_brief_quantity_20261111.json'))};
+detail.ai.brief.stale=false;detail.ai.brief.review_revision=detail.review_revision;
+detail.conditions.replacement_qty=null;detail.analysis.recovery_plan.quantity=null;detail.analysis.recovery_plan.production_days=null;detail.analysis.recovery_plan.earliest_ship_date=null;
+detail.conditions.production_daily_capacity=200;detail.analysis.recovery_plan.daily_capacity_limit=224;
+detail.tasks=[{id:'ROOT-CAUSE-1',type:'root_cause',status:'open',department:'quality'}];
+const section=w.document.createElement('section');section.innerHTML=w.qa.renderAIBrief(detail);
+let planning=section.querySelector('.ai-planning-facts');
+for(const text of ['확정 불량량 17,900 EA ≠ 확정 재공급량','재공급 수량: 미확인','모의 계획: 200 EA/영업일','가정 상한: 224 EA/영업일','생산일수·출하일 미산정','전량을 재공급한다고 가정하지'])assert(planning.textContent.includes(text),text);
+assert(!planning.textContent.includes('79'));assert(!planning.textContent.includes('95'));
+assert(section.querySelector('.ai-untrusted').textContent.includes('79~80일'));assert(!section.querySelector('.ai-untrusted').open);
+assert(section.querySelector('.ai-investigation-facts').textContent.includes('원인 조사 진행 중 · 미완료'));
+assert(section.querySelector('.ai-grounding').textContent.includes('F1 / L-02 / PL-02 · 해당 라인 가동률 97%'));
+assert(section.querySelector('.ai-grounding').textContent.includes('공장 전체 가동률로 집계한 값이 아닙니다'));
+assert(!section.querySelector('.ai-capacity-calculation').open,'verbose provenance stays collapsed without hiding key quantity/rate warnings');
+detail.conditions.replacement_qty=17900;detail.analysis.recovery_plan.production_days=90;detail.analysis.recovery_plan.earliest_ship_date='2026-11-11';
+section.innerHTML=w.qa.renderAIGrounding(detail);planning=section.querySelector('.ai-planning-facts');
+assert(planning.textContent.includes('17,900 EA · 모의 입력'));assert(planning.textContent.includes('생산 90영업일'));assert(planning.textContent.includes('95영업일'));assert(planning.textContent.includes('실제 공급 확약 아님'));
+detail.tasks[0].status='done';section.innerHTML=w.qa.renderAIGrounding(detail);assert(section.querySelector('.ai-investigation-facts').textContent.includes('모의 회신 완료'));assert(!section.querySelector('.ai-investigation-facts').textContent.includes('진행 중'));
+detail.tasks=[];section.innerHTML=w.qa.renderAIGrounding(detail);assert(section.querySelector('.ai-investigation-facts').textContent.includes('상태 미확인'));
+dom.window.close();console.log('AI planning UI PASS: null quantity/time, defect≠replacement, selected200≠ceiling224, explicit hypothetical95days, line97% scope, root-cause status, actual bad prose preserved and collapsed, progressive provenance');

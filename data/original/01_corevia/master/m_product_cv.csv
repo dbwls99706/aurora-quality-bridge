@@ -1,0 +1,7 @@
+product_id|product_name|revenue_share_pct|market_growth_pct|main_material_id|primary_supplier_id|production_line|is_f1_dedicated
+PL-01|기초|30.0|3.0|M-A|V-201|F1|False
+PL-02|더마|20.0|18.0|M-B|V-205|F1|True
+PL-03|선케어|12.0|7.0|M-C|V-212|F2|False
+PL-04|색조|15.0|5.0|M-D|V-217|F1|False
+PL-05|헤어|13.0|-1.0|M-E|V-220|F2|False
+PL-06|바디|10.0|1.0|M-F|V-224|F2|False

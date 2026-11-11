@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f2ec">
+  <meta name="description" content="Aurora Quality Bridge. 배치별 품질 근거와 위원회 의결, 영업·생산의 공급 복구 업무를 연결하는 W03 시뮬레이션 데모.">
+  <title>Aurora Quality Bridge · 판단에서 다음 공급까지</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/landing.css">
+  <link rel="stylesheet" href="/static/common-nav.css">
+  <script src="/static/common-nav.js" defer></script>
+  <script src="/static/landing.js" defer></script>
+</head>
+<body class="has-global-nav">
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+  <header class="global-header" data-site-header>
+    <div class="global-header-inner">
+      <a class="wordmark" href="/" aria-label="Aurora Quality Bridge 홈">aurora<span class="mark-dot">.</span><span class="brand-divider"></span><span class="brand-name">QUALITY<br>BRIDGE</span></a>
+      <nav class="primary-nav" aria-label="주요 화면"><a href="/" data-destination="intro" aria-current="page">소개</a><a href="/workspace" data-destination="workspace" >품질 검토</a><a href="/workspace#tasks" data-destination="tasks" >공급 복구</a><a href="/workspace#sources" data-destination="sources" >근거 자료</a><a href="/workspace#audit" data-destination="audit" >감사 이력</a></nav>
+      <a class="header-cta" href="/workspace">워크스페이스 열기 <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <div class="contents-band"><details class="contents-disclosure wrap" open><summary>이 페이지 목차 <span aria-hidden="true">＋</span></summary><nav class="page-contents" aria-label="이 페이지 목차"><a href="#overview" aria-current="location"><span>00</span> 개요</a><a href="#approach"><span>01</span> 업무 흐름</a><a href="#cases"><span>02</span> 검토 사례</a><a href="#boundaries"><span>03</span> 구현 범위</a></nav></details></div>
+  <main id="main">
+    <div class="hero-stage">
+    <section id="overview" tabindex="-1" class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="project-pill"><span>W03</span> COREVIA / QUALITY &amp; RECOVERY</p>
+        <h1 id="hero-title"><span>품질 판단에서,</span><br><span class="title-tail">다음 공급까지.</span></h1>
+        <div class="hero-support"><p class="hero-description">흩어진 기록을 하나의 근거로.<br> 품질 판단과 사람의 의결, 다음 공급에 필요한 확인을 연결합니다.</p>
+        <div class="hero-actions"><a class="button primary" href="/workspace">배치 검토 시작하기 <span aria-hidden="true">↗</span></a><a class="text-link" href="#approach">어떻게 연결되나요? <span aria-hidden="true">↓</span></a></div>
+        <p class="hero-note">AX 인재전쟁 가상기업 데모 · 실제 회수·발송 없음 · AI 의견은 사람 검토 필요</p></div>
+      </div>
+      <div class="hero-demo" id="hero-demo" data-motion="idle">
+        <div class="demo-topline"><div class="demo-wordmark"><span>TRACE / 001</span> 하나의 배치를 따라가는 검토</div><div class="demo-header-actions"><span>원본 기준 설명용 예시</span><button type="button" id="play-explanation"><span class="play-symbol" aria-hidden="true">▶</span><span id="play-label">연결 과정 보기</span></button></div></div>
+        <div class="signal-map">
+          <section class="source-stack" aria-label="연결하는 원본 기록">
+            <p class="signal-step"><span>01</span> 근거를 연결하고</p>
+            <div class="source-record source-one"><span class="record-icon" aria-hidden="true">C</span><div><strong>품질 클레임</strong><span>확정 불량 · 미확정 검사 구분</span></div><span class="source-tag">CSV</span></div>
+            <div class="source-record source-two"><span class="record-icon" aria-hidden="true">B</span><div><strong>생산 배치</strong><span>배치 ID로 같은 생산분 확인</span></div><span class="source-tag">CSV</span></div>
+            <div class="source-record source-three"><span class="record-icon" aria-hidden="true">Q</span><div><strong>품질 출하</strong><span>계산에 사용한 원본 대조</span></div><span class="source-tag">CSV</span></div>
+            <p class="source-note"><span class="ledger-label">동일 배치로 연결</span>B-02-2602-01<br><span>원본 행 · SHA-256 연결</span></p>
+          </section>
+          <div class="signal-connector connector-one" aria-hidden="true"><svg viewBox="0 0 28 16" focusable="false"><path d="M3 8H24M19 3l5 5-5 5"/></svg></div>
+          <figure class="case-dossier" aria-label="공식 원본에 따른 대표 배치의 품질 판정 예시">
+            <div class="dossier-top"><span class="signal-step"><span>02</span> 기준과 비교합니다</span><span class="dossier-stamp">원본 기준 예시</span></div>
+            <div class="dossier-heading"><p>B-02-2602-01</p><h2>더마 2월 생산 배치</h2></div>
+            <div class="dossier-result"><div><span class="metric-caption">규격이탈 확정 불량률</span><strong>11.87<span>%</span></strong></div><div class="threshold"><strong>10%</strong><span>이상 회수 대상</span></div></div>
+            <div class="measure-line" aria-hidden="true"><span></span><i></i><b class="measure-ticks"></b></div>
+            <div class="measure-labels"><span>0%</span><span>회수 기준 10%</span><span>20%</span></div>
+            <p class="calculation">17,900 EA ÷ 150,745 EA × 100<br><span>판정에는 반올림 전 비율을 적용합니다.</span></p>
+            <figcaption><span class="human-check" aria-hidden="true">!</span><span><strong>위원회 의결이 필요합니다.</strong><br>계산 결과만으로 회수를 실행하지 않습니다.</span></figcaption>
+          </figure>
+          <div class="signal-connector connector-two" aria-hidden="true"><svg viewBox="0 0 28 16" focusable="false"><path d="M3 8H24M19 3l5 5-5 5"/></svg></div>
+          <section class="handoff-stack" aria-label="의결 이후 확인할 업무 예시">
+            <p class="signal-step"><span>03</span> 다음 확인을 이어갑니다</p>
+            <ol class="dossier-flow"><li><span class="flow-node" aria-hidden="true">S</span><div><strong>고객 보유량</strong><span>영업 담당자 확인</span></div><span class="flow-state">확인 필요</span></li><li><span class="flow-node" aria-hidden="true">P</span><div><strong>생산 가능일</strong><span>생산 일정 대조</span></div><span class="flow-state">확인 필요</span></li><li><span class="flow-node" aria-hidden="true">Q</span><div><strong>품질 재승인</strong><span>공급 전 품질 확인</span></div><span class="flow-state">확인 필요</span></li></ol>
+            <p class="handoff-note">공급 가능은,<br><strong>확인이 모인 다음에.</strong></p>
+          </section>
+        </div>
+        <div class="demo-controls"><p id="motion-status" role="status">흐름 설명입니다. 실제 사건 상태나 의결을 변경하지 않습니다.</p></div>
+      </div>
+    </section>
+    </div>
+    <section class="data-band" aria-label="공식 원본 데이터 범위"><div class="wrap data-band-inner"><p>판단의 출발점은<br><strong>함께 확인한 원본입니다.</strong></p><div><strong>480</strong><span>생산 배치</span></div><div><strong>165</strong><span>품질 클레임</span></div><div><strong>2</strong><span>원본 기준 회수 후보</span></div><small>공식 배포 자료 집계<br>가상기업 기준일 2026.07.01</small></div></section>
+    <section id="approach" tabindex="-1" class="approach wrap section-space" aria-labelledby="approach-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / THE HANDOFF</p><h2 id="approach-title">결정 하나가,<br>다음 업무의 시작이 되도록.</h2></div><p>단계를 선택해 역할과 확인할 내용을 살펴보세요.<br>설명용 예시이며 실제 사건은 변경되지 않습니다.</p></div>
+      <div class="workflow-explorer">
+        <div class="workflow-chapters" role="group" aria-label="업무 단계 설명 선택">
+          <button type="button" class="workflow-chapter" data-chapter="evidence" aria-pressed="true" aria-controls="workflow-detail"><span class="step-number">01</span><span><small>품질팀</small><strong>흩어진 기록을<br>하나의 근거로.</strong><b class="chapter-short">근거 연결</b></span><span class="chapter-arrow" aria-hidden="true">↗</span></button>
+          <button type="button" class="workflow-chapter" data-chapter="decision" aria-pressed="false" aria-controls="workflow-detail"><span class="step-number">02</span><span><small>품질위원회</small><strong>판단의 이유까지<br>남기는 의결.</strong><b class="chapter-short">의결</b></span><span class="chapter-arrow" aria-hidden="true">↗</span></button>
+          <button type="button" class="workflow-chapter" data-chapter="recovery" aria-pressed="false" aria-controls="workflow-detail"><span class="step-number">03</span><span><small>영업 · 생산 · 품질</small><strong>다음 공급은<br>조건 확인부터.</strong><b class="chapter-short">공급 확인</b></span><span class="chapter-arrow" aria-hidden="true">↗</span></button>
+        </div>
+        <div id="workflow-detail" class="workflow-detail" role="region" aria-label="선택한 업무 단계 설명" aria-live="polite" aria-atomic="true" data-stage="evidence">
+          <div class="detail-top"><span id="detail-kicker">01 / EVIDENCE</span><span>원본 기준 설명용 예시</span></div>
+          <h3 id="detail-title">같은 배치, 같은 기준.</h3>
+          <p id="detail-description">클레임 · 생산 배치 · 품질 출하를 배치 ID로 연결합니다. 확정 불량과 미확정 검사를 구분하고 계산에 사용한 원본을 확인합니다.</p>
+          <div id="detail-visual" class="detail-visual"><div class="source-equation"><div><span>규격이탈 확정</span><strong>17,900 <small>EA</small></strong></div><span class="equation-symbol">÷</span><div><span>생산 배치</span><strong>150,745 <small>EA</small></strong></div></div><p class="visual-note">B-02-2602-01 · 불량률 11.87%<br>판정에는 반올림 전 비율을 적용합니다.</p></div>
+          <dl class="detail-facts"><div><dt>다음 할 일</dt><dd id="detail-next">원본 행과 파일 해시(SHA-256)를 대조한 뒤, 품질위원회에 검토를 요청합니다.</dd></div><div><dt>확인 경계</dt><dd id="detail-boundary">원인 조사는 별도입니다. 계산 결과만으로 회수를 실행하지 않습니다.</dd></div></dl>
+        </div>
+      </div>
+      <noscript><p class="no-script-note">단계 전환에는 JavaScript가 필요합니다. 품질팀이 원본을 대조하고, 위원회가 근거와 사유를 검토하며, 영업·생산·품질이 고객 보유량·생산 가능일·품질 재승인을 각각 확인합니다.</p></noscript>
+    </section>
+    <section id="cases" tabindex="-1" class="case-section section-space" aria-labelledby="cases-title"><div class="wrap">
+      <div class="section-heading"><div><p class="eyebrow">02 / OPEN A CASE</p><h2 id="cases-title">설명에서, 실제 검토 화면으로.</h2></div><p>저장된 사건의 근거와 다음 할 일을 확인하세요.<br>사건을 열어보는 것만으로 데이터가 바뀌지는 않습니다.</p></div>
+      <div id="case-explorer" class="case-explorer" aria-live="polite"><p class="case-loading">서버에서 현재 사건 목록을 불러오는 중입니다.</p></div>
+      <noscript><style>#case-explorer .case-loading,#play-explanation{display:none}</style><p class="no-script-note">사건 목록을 불러오려면 JavaScript가 필요합니다. <a href="/workspace">워크스페이스 열기 ↗</a></p></noscript>
+      <p class="case-footnote">사건 상태는 서버에 저장된 기록을 따릅니다. 시연한 내용은 새로고침 후에도 유지됩니다.</p>
+    </div></section>
+    <section id="boundaries" tabindex="-1" class="boundaries wrap section-space" aria-labelledby="boundaries-title"><div class="section-intro"><p class="eyebrow">03 / BUILT WITH BOUNDARIES</p><h2 id="boundaries-title">신뢰할 수 있도록,<br>경계도 분명하게.</h2><p>현재 구현된 기능과<br>실제 운영 전에 필요한 검증을 구분합니다.</p></div><dl class="boundary-list"><div><dt><span class="boundary-dot"></span>작동하는 모의 업무 흐름</dt><dd>원본 조회, 규칙 계산, 역할별 모의 의결·회신, 조건 변경과 이력 저장을 직접 실행할 수 있습니다.</dd></div><div><dt><span class="boundary-dot outlined"></span>AI 응답과 사실 검증은 별개</dt><dd>실제 모델 응답을 받은 이력이 있습니다. 응답 성공이 내용의 정확성을 보장하지는 않습니다. AI 의견은 원본 대조와 사람 검토가 필요하며, 규칙 계산·의결과 구분합니다.</dd></div><div><dt><span class="boundary-dot outlined"></span>실제 운영·최종 제출 전 확인 필요</dt><dd>역할 선택은 데모용입니다. 실제 조직 인증이나 고객 통보·회수 실행은 없으며, 최종 제출물 검증도 남아 있습니다.</dd></div></dl></section>
+    <section class="closing wrap"><p>근거를 확인했다면,<br><strong>다음 할 일을 이어가세요.</strong></p><a class="button primary" href="/workspace">워크스페이스 열기 <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer class="site-footer wrap"><a class="wordmark" href="/">aurora<span class="mark-dot">.</span></a><p>QUALITY BRIDGE · W03<br>AX 인재전쟁 가상기업 과제용 시뮬레이션</p><span>원본 보존 · 외부 실행 없음</span></footer>
+</body>
+</html>

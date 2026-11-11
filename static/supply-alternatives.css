@@ -1,0 +1,9 @@
+/* Scoped to the read-only alternatives panel, separate from the recovery board. */
+.supply-alternatives .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.supply-alternatives .table-scroll{margin:16px 0}
+.supply-alternatives caption{text-align:left;padding:10px 0;font-size:12px;line-height:1.7;color:var(--ink)}
+.supply-alternatives td input{box-sizing:border-box;width:100%;min-width:105px;max-width:180px;min-height:40px;padding:8px;border:1px solid var(--line);border-radius:3px;background:var(--panel);color:var(--ink);font:inherit}
+.supply-alternatives td input[type=date]{min-width:155px}
+.supply-alternatives input:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.supply-alternatives .data-table td{line-height:1.8}
+@media(max-width:700px){.supply-alternatives td input{font-size:16px}.supply-alternatives .data-table{min-width:620px}}

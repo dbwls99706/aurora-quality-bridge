@@ -1,0 +1,6 @@
+metric|value|note
+DSO_days|55.0|업계 평균 매출채권 회수기간(일)
+return_rate_pct|8.0|업계 평균 반품률(%)
+gpm_pct|23.0|업계 평균 매출총이익률(%)
+inventory_cover_weeks|5.0|업계 평균 재고 커버(주)
+repurchase_rate_pct|22.0|업계 평균 90일 재구매율(%)
