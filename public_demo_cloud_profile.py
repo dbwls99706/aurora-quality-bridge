@@ -7,7 +7,7 @@ DATABASE_NAME='example_demo'
 DATABASE_USER='example_demo'
 OWNER_UUID='00000000-0000-4000-8000-000000000002'
 TENANT='lounge'
-EXPIRES_AT='2026-11-16T14:59:59+00:00'  # explicit timezone-aware end time; NOT a billing stop
+EXPIRES_AT='2026-11-23T14:59:59+00:00'  # explicit timezone-aware end time; NOT a billing stop
 PUBLIC_RELEASE=False  # enable only after owner QA and real HTTPS checks
 
 GATEWAY_VERIFIED=False  # official header overwrite + no direct backend ingress confirmed
